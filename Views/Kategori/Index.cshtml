@@ -1,0 +1,22 @@
+﻿@using MVCStarter.Models.Entity
+@model List<TBLKATEGORILER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Category ID</th>
+        <th>Category Name</th>
+    </tr>
+    <tbody>
+        @foreach(var ctgries in Model)
+            {
+                <tr>
+                    <td>@ctgries.KATEGORIID</td>
+                    <td>@ctgries.KATEGORIAD</td>
+                </tr>
+            }
+    </tbody>
+</table>
