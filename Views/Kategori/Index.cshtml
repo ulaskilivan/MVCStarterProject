@@ -4,11 +4,13 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
-
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 <table class="table table-bordered">
     <tr>
         <th>Category ID</th>
         <th>Category Name</th>
+        <th style="width:1.5rem">Delete</th>
+        <th style="width:1.5rem">Update</th>
     </tr>
     <tbody>
         @foreach(var ctgries in Model)
@@ -16,8 +18,10 @@
                 <tr>
                     <td>@ctgries.KATEGORIID</td>
                     <td>@ctgries.KATEGORIAD</td>
+                    <td><a href="/Kategori/Sil/@ctgries.KATEGORIID" class="btn btn-danger"><i class="fa-solid fa-trash"></i></a></td>
+                    <td><a href="/Kategori/Guncelle/@ctgries.KATEGORIID" class="btn btn-warning"><i class="fa-regular fa-pen-to-square"></i></a></td>
                 </tr>
             }
     </tbody>
-
 </table>
+<a href="/KATEGORI/YENIKATEGORI/" class="btn btn-primary">Add New Category</a>
