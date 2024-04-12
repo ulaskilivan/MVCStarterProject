@@ -1,0 +1,30 @@
+﻿@using MVCStarter.Models.Entity
+@model List<TBLURUNLER>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_MainLayout.cshtml";
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Product ID</th>
+        <th>Product Name</th>
+        <th>Brand</th>
+        <th>Category</th>
+        <th>Price</th>
+        <th>Stock</th>
+    </tr>
+    <tbody>
+        @foreach(var prd in Model)
+            {
+                <tr>
+                    <td>@prd.URUNID</td>
+                    <td>@prd.URUNAD</td>
+                    <td>@prd.MARKA</td>
+                    <td>@prd.URUNKATEGORI</td>
+                    <td>@prd.FIYAT</td>
+                    <td>@prd.STOK</td>
+                </tr>
+            }
+    </tbody>
+</table>
