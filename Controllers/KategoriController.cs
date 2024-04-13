@@ -16,5 +16,17 @@ namespace MVCStarter.Controllers
             var values = db.TBLKATEGORILERs.ToList();
             return View(values);
         }
+        [HttpGet]
+        public ActionResult YeniKategori()
+        {
+            return View();
+        }
+        [HttpPost]
+        public ActionResult YeniKategori(TBLKATEGORILER p1)
+        {
+            db.TBLKATEGORILERs.Add(p1);
+            db.SaveChanges();
+            return View();
+        }
     }
 }
